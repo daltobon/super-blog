@@ -4,10 +4,21 @@ class PostsController < ApplicationController
 		@posts = Post.all.order("created_at DESC")
 	end
 
-	def create		
+	def new
+		@post = Post.new	
+	end
+
+	def create
+		@post = Post.new(post_params)
+		if @post.save
+			redirect_to @post, notice: "Post created correctly"
+		else
+			render 'new'
+		end
 	end
 	
-	def show		
+	def show
+			
 	end
 
 	def edit		
@@ -20,4 +31,9 @@ class PostsController < ApplicationController
 	def destroy		
 	end
 
+	private
+
+	def post_params
+		params.require(:post).permit(:title, :content, :user_id)
+	end
 end

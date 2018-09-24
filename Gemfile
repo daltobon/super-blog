@@ -14,6 +14,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
+gem 'better_errors', '~> 2.4'
+gem 'bulma-rails', '~> 0.6.1'
+gem 'simple_form', '~> 4.0', '>= 4.0.1'
 
 group :development, :test do
  

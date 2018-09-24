@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+	before_action :find_post, only: [:show]
+
 	def index
 		@posts = Post.all.order("created_at DESC")
 	end
@@ -8,7 +10,7 @@ class PostsController < ApplicationController
 		@post = Post.new	
 	end
 
-	def create
+	def createm
 		@post = Post.new(post_params)
 		if @post.save
 			redirect_to @post, notice: "Post created correctly"
@@ -18,14 +20,12 @@ class PostsController < ApplicationController
 	end
 	
 	def show
-			
 	end
 
 	def edit		
 	end
 
-	def update
-		
+	def update		
 	end
 
 	def destroy		
@@ -35,5 +35,9 @@ class PostsController < ApplicationController
 
 	def post_params
 		params.require(:post).permit(:title, :content, :user_id)
+	end
+
+	def find_post
+		@post = Post.find(params[:id])		
 	end
 end

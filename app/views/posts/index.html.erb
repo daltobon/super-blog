@@ -7,11 +7,13 @@
 				<div class="media">
 					<div class="media-content">
 						<p class="title is-4">
-							<%= link_to post.title, post %></p>
+							<%= link_to post.title, post %>
+							</p>
 						</div>
 					</div>
 					<div class="content">
-						<%= post.content.first(295) %>...
+						<%= post.content.first(300)%>..
+						<p> <%= link_to 'Leer mas', post %></p>
 					</div>	 	
 					<!-- <div class="comment-count">
 						<span class="tag is-rounded"> <%#comment count%> </span>	 		 	

@@ -1,14 +1,14 @@
 <% content_for :page_title, "Publicaciones" %>
 <section class="section">
 	<div class="container">
-		<% @posts.each do |post| %>
-		<div class="card">
+	<% @posts.each do |post| %>
+		<div class="card notification" id="color">		
 			<div class="card-content">
 				<div class="media">
 					<div class="media-content">
-						<p class="title is-4">
-							<%= link_to post.title, post %>
-							</p>
+						<p class="profile-link title is-4">
+							<%= link_to post.title, post%>
+						</p>
 						</div>
 					</div>
 					<div class="content">

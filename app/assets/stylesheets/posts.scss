@@ -1,3 +1,19 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#color:nth-child(2n) {
+    background-color: hsl(0, 0%, 86%);
+    color: #333;
+}
+	
+#color:nth-child(2n+1) {
+    background-color: hsl(0, 0%, 96%);
+    color: #333;
+}
+
+#color:last-child {
+    background-color: hsl(0, 0%, 29%);
+    color: #fff;
+}
+

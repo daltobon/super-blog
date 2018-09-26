@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 		@post = Post.new	
 	end
 
-	def createm
+	def create
 		@post = Post.new(post_params)
 		if @post.save
 			redirect_to @post, notice: "Post created correctly"

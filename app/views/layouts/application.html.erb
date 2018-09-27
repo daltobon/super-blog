@@ -5,13 +5,13 @@
     <%= csrf_meta_tags %>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-
- <section class="hero is-dark is-medium">
+ <body>
+ <section class="hero is-medium is-warning is-bold">
 	  <!-- Hero head: will stick at the top -->
 	  <div class="hero-head">
 	    <nav class="navbar">
@@ -37,7 +37,7 @@
 	  <!-- Hero content: will be in the middle -->
 	  <div class="hero-body">
 	    <div class="container has-text-centered">
-	      <h1 class="title">
+	      <h1 id="titulo" class="title is-1">
 			<%= render 'shared/alerts' %>
 	        <%= yield :page_title %>
 	      </h1>

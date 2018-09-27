@@ -1,76 +1,30 @@
 <% content_for :page_title, "Publicaciones" %>
-<section class="section">
-	<div class="container">
-		<% @posts.each do |post| %>
-		<div class="card">
-			<div class="card-content">
-				<div class="media">
-					<div class="media-content">
-						<p class="title is-4">
-							<%= link_to post.title, post %>
-							</p>
-						</div>
-					</div>
-					<div class="content">
-						<%= post.content.first(300)%>..
-						<p> <%= link_to 'Leer mas', post %></p>
-					</div>	 	
-					<!-- <div class="comment-count">
-						<span class="tag is-rounded"> <%#comment count%> </span>	 		 	
-					</div> -->
+<% @posts.each do |post| %>
+<br>
+<section class="container">
+	<div class="hero is-small is-light">
+		<div class="hero-body">	
+			<div class="card container">
+				<p id="title" class="card-content columns is-centered title is-4 ">
+					<%= link_to post.title, post %>
+				</p>
+				<div class="is-centered">
+					<figure id="image-hover" class="image is-3by1">
+						<%= link_to post do %>
+						<%= image_tag "/banner.jpg"%>
+						<% end %>
+					<figure>						
 				</div>
-			</div>
-			<% end %>
+				<div class="hero-body has-text-justified">
+					<h6><%= post.content.first(400)%>..</h6>			
+				</div>
+				<div class="button is-outlined is-warning is-medium level" id="title">
+					<i class="level-item is-5" id="title">
+					<b class="has-text-centered"><%= link_to 'Leer más', post %></b>
+					<i>
+				</div>	
+			</div>				
 		</div>
-		
-	</section>
-	<!--  --> 
-	
-	<section class="container">		
-		<div class="tile is-ancestor">
-			<div class="tile is-vertical is-8">
-				<div class="tile">
-					<div class="tile is-parent is-vertical">
-						<article class="tile is-child notification is-primary">						
-							<p class="title"><%=  %></p>
-							<p class="subtitle"><%=  %></p>
-						</article>						
-
-						<article class="tile is-child notification is-warning">
-							<p class="title">...tiles</p>
-							<p class="subtitle">Bottom tile</p>
-						</article>
-					</div>
-					<div class="tile is-parent">
-						<article class="tile is-child notification is-info">
-							<p class="title">Middle tile</p>
-							<p class="subtitle">With an image</p>
-							<figure class="image is-4by3">
-								<img src="https://bulma.io/images/placeholders/640x480.png">
-							</figure>
-						</article>
-					</div>
-				</div>
-				<div class="tile is-parent">
-					<article class="tile is-child notification is-danger">
-						<p class="title">Wide tile</p>
-						<p class="subtitle">Aligned with the right tile</p>
-						<div class="content">
-						<p>...</p>
-						</div>
-					</article>
-				</div>
-			</div>
-			<div class="tile is-parent">
-				<article class="tile is-child notification is-success">
-					<div class="content">
-						<p class="title">Tall tile</p>
-						<p class="subtitle">With even more content</p>
-						<div class="content">
-							<p>...</p>
-						</div>
-					</div>
-				</article>
-			</div>
-		</div>
-	</section>
+	</div>	
+</section>
+<% end %>

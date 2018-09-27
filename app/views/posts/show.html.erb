@@ -15,9 +15,19 @@
 					<%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?" }, class: "button is-danger" %>			
 				</p>
 			</div>
+
 		</nav>	
+		<div class="is-centered">
+			<figure class="image is-3by1">
+				<%= link_to @post do %>
+				<%= image_tag @post.image.url(:medium) %>
+				<% end %>
+			<figure>
+		</div>
 		<div class="content notification is-<%= @item %>">
+
 			<%= @post.content %>
+
 		</div>	
 	</div>	
 </section>

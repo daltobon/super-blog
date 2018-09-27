@@ -13,4 +13,18 @@
  *= require_tree .
  *= require_self
  */
+<<<<<<< HEAD
 @import "bulma";
+=======
+
+@import "bulma";
+
+body {
+	font-family: 'Noto Sans', sans-serif;
+	text-decoration: none;
+}
+
+.profile-link a {
+	text-decoration: none;
+}
+>>>>>>> 0441637a695568719faf7f40b661e1264eaca0a0

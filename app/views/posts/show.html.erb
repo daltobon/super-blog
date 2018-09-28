@@ -1,6 +1,6 @@
 <%= content_for :page_title, @post.title %>
-<section class="section ">
-	<div class="container ">
+<section class="section">
+	<div class="container">
 		<nav class="level">
 			<div class="level-left">
 				<p class="level-item">
@@ -24,10 +24,8 @@
 				<% end %>
 			<figure>
 		</div>
-		<div class="content notification is-<%= @item %>">
-
-			<%= @post.content %>
-
+		<div class="content box">
+			<%= markdown(@post.content)%>
 		</div>	
 	</div>	
 </section>

@@ -17,6 +17,7 @@ gem 'devise'
 gem 'better_errors', '~> 2.4'
 gem 'bulma-rails', '~> 0.6.1'
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
+gem "paperclip", "~> 6.0.0"
 
 group :development, :test do
  

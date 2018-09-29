@@ -8,10 +8,8 @@
 					<strong>Actions</strong>
 				</p>
 			</div>
-			
 			<div class="level-right">
 				<p class="level-item">
-
 					<%= link_to "Edit", edit_post_path(@post), class: "button" %>
 				</p>
 				<p class="level-item">
@@ -28,7 +26,8 @@
 				<figure>
 				</div>
 				<div class="content box">
+					<p class="is-uppercase is-size-2 has-text-centered"><%= @post.title %></p>
 					<%= markdown(@post.content)%>
 				</div>	
-		</div>	
+			</div>	
 </section>

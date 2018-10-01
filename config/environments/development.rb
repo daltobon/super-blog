@@ -26,6 +26,15 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+   config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('danielrails'),
+    access_key_id: ENV.fetch('AKIAIPQ6JQE6ZWK2ISVQ'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('sa-east-1'),
+  }
+}
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 

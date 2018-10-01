@@ -17,8 +17,7 @@ gem 'better_errors', '~> 2.4'
 gem 'bulma-rails', '~> 0.6.1'
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
 gem "paperclip", "~> 6.0.0"
-gem 'aws-sdk', '~> 2.3'
-
+gem 'aws-sdk'
 
 group :development, :test do
  
@@ -26,6 +25,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'sqlite3'
+  gem 'aws-sdk'
 end
 
 group :production do

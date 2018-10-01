@@ -253,7 +253,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  aws-sdk (~> 2.3)
+  aws-sdk
   better_errors (~> 2.4)
   bulma-rails (~> 0.6.1)
   byebug
@@ -280,4 +280,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.1
+   1.16.5

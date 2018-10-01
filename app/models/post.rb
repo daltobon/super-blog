@@ -16,8 +16,8 @@ class Post < ApplicationRecord
     :default_url => "default_img.png"
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-  validates :title, presence :true
-  validates :content, presence :true
-  validates :image, presence :true
+  validates :title, presence: true
+  validates :content, presence: true
+  validates :image, presence: true
 
 end

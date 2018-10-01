@@ -30,6 +30,15 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
+  config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('danielrails'),
+    access_key_id: ENV.fetch('AKIAIPQ6JQE6ZWK2ISVQ'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('sa-east-1'),
+  }
+}
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.

@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
-  
+
   has_attached_file :image, styles: {large: "1024x768", medium: "720x240", thumb: "640x480>" },
    :convert_options => {
     :thumb => "-quality 75 -strip" },
@@ -10,9 +10,10 @@ class Post < ApplicationRecord
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
       :region => ENV['AWS_REGION']
-    },
-
-    
+    },    
+    :path => ":filename.:extension",
+    # :path => ":rails_root/public/system/:attachment/:id/:style/:filename", 
+    :default_url => "default_img.png"
 
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   validates :title, presence :true

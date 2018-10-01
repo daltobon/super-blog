@@ -26,12 +26,12 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'sqlite3'
-  gem 'ws-sdk-s3'
+  gem 'aws-sdk-s3'
 end
 
 group :production do
   gem 'pg'
-  gem 'ws-sdk-s3'
+  gem 'aws-sdk-s3'
 end
 
 group :development do

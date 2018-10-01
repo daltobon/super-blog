@@ -6,7 +6,7 @@ class Post < ApplicationRecord
     :thumb => "-quality 75 -strip" },
     :s3_protocol => :https,
     :storage => :s3,
-    :s3_host_name => "sa-east-1.amazoneaws.com",
+    :s3_host_name => "sa-east-1.amazonaws.com",
   :s3_credentials => {
       :bucket => ENV['S3_BUCKET_NAME'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],

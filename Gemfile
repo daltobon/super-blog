@@ -30,7 +30,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
-  gem 'pg'
+  gem 'pg', '~> 0.18.4'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard', '~> 2.14', '>= 2.14.2'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false

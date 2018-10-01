@@ -19,16 +19,19 @@ gem 'simple_form', '~> 4.0', '>= 4.0.1'
 gem "paperclip", "~> 6.0.0"
 gem 'aws-sdk', '~> 2.3'
 
+
 group :development, :test do
  
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'sqlite3'
+  gem 'ws-sdk-s3'
 end
 
 group :production do
   gem 'pg'
+  gem 'ws-sdk-s3'
 end
 
 group :development do

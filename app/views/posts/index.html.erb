@@ -5,7 +5,7 @@
 	<div class="hero is-small is-light">
 		<div class="hero-body">	
 			<div class="card container">
-				<p id="title" class="card-content columns is-centered title is-4 ">
+				<p id="title" class="card-content is-uppercase is-size-2 has-text-centered">
 					<%= link_to post.title, post %>
 				</p>
 				<div class="is-centered">
@@ -16,7 +16,7 @@
 					<figure>
 				</div>
 				<div class="hero-body has-text-justified">
-					<h6><%= post.content.first(400)%>..</h6>			
+					<%= markdown(post.content.first(250) + "...") %>	
 				</div>
 				<div class="button is-outlined is-warning is-medium level" id="title">
 					<i class="level-item is-5" id="title">
@@ -28,3 +28,4 @@
 	</div>	
 </section>
 <% end %>
+

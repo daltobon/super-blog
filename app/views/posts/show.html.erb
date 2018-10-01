@@ -1,6 +1,7 @@
 <%= content_for :page_title, @post.title %>
-<section class="section ">
-	<div class="container ">
+<section class="section">
+	<div class="container">
+		<% if signed_in? && @post.user == current_user %>
 		<nav class="level">
 			<div class="level-left">
 				<p class="level-item">
@@ -15,19 +16,18 @@
 					<%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?" }, class: "button is-danger" %>			
 				</p>
 			</div>
-
+			<% end %>
 		</nav>	
 		<div class="is-centered">
 			<figure class="image is-3by1">
 				<%= link_to @post do %>
 				<%= image_tag @post.image.url(:medium) %>
 				<% end %>
-			<figure>
-		</div>
-		<div class="content notification is-<%= @item %>">
-
-			<%= @post.content %>
-
-		</div>	
-	</div>	
+				<figure>
+				</div>
+				<div class="content box">
+					<p class="is-uppercase is-size-2 has-text-centered"><%= @post.title %></p>
+					<%= markdown(@post.content)%>
+				</div>	
+			</div>	
 </section>

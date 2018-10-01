@@ -18,6 +18,7 @@ gem 'bulma-rails', '~> 0.6.1'
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
 gem "paperclip", "~> 6.0.0"
 gem 'aws-sdk'
+gem 'redcarpet', '~> 3.4.0'
 
 group :development, :test do
  

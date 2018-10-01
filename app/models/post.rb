@@ -11,10 +11,6 @@ class Post < ApplicationRecord
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
       :region => ENV['AWS_REGION']
     },    
-    :path => ":filename.:extension",
-    # :path => ":rails_root/public/system/:attachment/:id/:style/:filename", 
-    :default_url => "default_img.png"
-
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   validates :title, presence: true
   validates :content, presence: true

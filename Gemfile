@@ -27,10 +27,6 @@ group :development, :test do
   gem 'selenium-webdriver'
 end
 
-group :production do 
-  gem 'pg'
-end
-
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -39,5 +35,11 @@ group :development do
   gem 'guard', '~> 2.14', '>= 2.14.2'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 end
+
+group :production do 
+   gem 'rails_12factor'
+  gem 'pg'
+end
+
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

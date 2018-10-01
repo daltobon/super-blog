@@ -12,42 +12,30 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
  <body>
- <section class="hero is-medium is-warning is-bold">
-	  <!-- Hero head: will stick at the top -->
-	  <div class="hero-head">
-	    <nav class="navbar">
-	      <div class="container">
-	        <div class="navbar-brand">
-	          <%= link_to 'Home Blog', posts_path, class: "navbar-item" %>
-	          <% if current_user %>
-	          <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "navbar-item" %>
-	          <% else %>
-	          <%= link_to 'Iniciar Sesión', new_user_session_path, class: "navbar-item" %>
-	          <% end %>
-	          <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-	            <span></span>
-	            <span></span>
-	            <span></span>
-	          </span>
-	        </div>
-	        <div id="navbarMenuHeroA" class="navbar-menu">
-	          <div class="navbar-end">
-	            <%= link_to "Crear Publicación", new_post_path, class:"navbar-item" %>
-	          </div>
-	        </div>
-	      </div>
-	    </nav>
-	  </div>
-	  <!-- Hero content: will be in the middle -->
-	  <div class="hero-body">
-	    <div class="container has-text-centered">
-	      <h1 id="titulo" class="title is-1">
-			<%= render 'shared/alerts' %>
-	        <%= yield :page_title %>
-	      </h1>
-	    </div>
-	  </div>
-	</section> 
+ 	<div class="hero is-medium is-dark is-bold">
+ 	  <nav class="navbar">
+ 	    <div class="container">
+ 	      <div class="navbar-brand">
+ 	        <%= link_to 'Home Blog', posts_path, class: "navbar-item" %>
+ 	        <% if current_user %>
+ 	        <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "navbar-item" %>
+ 	        <% else %>
+ 	        <%= link_to 'Iniciar Sesión', new_user_session_path, class: "navbar-item" %>
+ 	        <% end %>
+ 	        <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+ 	          <span></span>
+ 	          <span></span>
+ 	          <span></span>
+ 	        </span>
+ 	      </div>
+ 	      <div id="navbarMenuHeroA" class="navbar-menu">
+ 	        <div class="navbar-end">
+ 	          <%= link_to "Crear Publicación", new_post_path, class:"navbar-item" %>
+ 	        </div>
+ 	      </div>
+ 	    </div>
+ 	  </nav>
+ 	</div>
     <%= yield %>
   </body>
 </html>

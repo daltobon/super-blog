@@ -19,6 +19,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true, length: { minimum: 250 }
   validates :image, presence: true
+  validates :image, image_size: { width: 720, height: 240 }
 
   def getImage
     @doc = Nokogiri::HTML(self.content)

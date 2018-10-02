@@ -8,15 +8,7 @@
       <%= link_to post.title, post %>
     </p>
   </header>
-  <div class="card-content">
-  	<div class="media">
-      <div class="media-left">
-        <figure id="image-hover" class="image is-128x128">
-        	<%= link_to post do %>
-        		<%= image_tag post.image.url(:thumb) %>
-        	<% end %>
-        <figure>
-    </div>
+  <div class="card-content">  	
     <div class="content">
      	<%= markdown(post.content.first(250)) %>...
       <time datetime="2016-1-1">
@@ -31,7 +23,6 @@
       </time>
     </div>
   </div>
-</div>
   <footer class="card-footer">
 	<% if signed_in? && post.user == current_user %>
 	<%= link_to 'Nueva Publicación', new_post_path, class: "card-footer-item item1" %>

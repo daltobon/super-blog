@@ -1,24 +1,25 @@
-# README
+# SUPER BLOG 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esta aplicación esta desarrollada en Ruby On Rails
 
-Things you may want to cover:
+***
 
-* Ruby version
+# USUARIOS
 
-* System dependencies
+    Los usuarios son gestionados con devise 
+***
 
-* Configuration
+# PUBLICACIONES
 
-* Database creation
+- TITULO
+- CONTENIDO
+- IMAGEN DE PORTADA 720X240
+- SOPORTA MARKDOWN
 
-* Database initialization
+***
 
-* How to run the test suite
+# DESPLEGADA EN HEROKU
 
-* Services (job queues, cache servers, search engines, etc.)
+http://arcane-dusk-31198.herokuapp.com/ 
 
-* Deployment instructions
-
-* ...
+***

@@ -13,3 +13,9 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+new Vue({
+  el: '#app',
+  data: {
+  	showNav: false
+  }
+});

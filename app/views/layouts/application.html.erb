@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog | Posts </title>
+  <title>Super Blog | Publicaciones </title>
     <%= csrf_meta_tags %>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
@@ -22,13 +22,13 @@
  	        <% else %>
  	        <%= link_to 'Iniciar Sesión', new_user_session_path, class: "navbar-item" %>
  	        <% end %>
- 	        <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+ 	        <span id="app" class="navbar-burger burger" @click="showNav = !showNav" :class="{ 'is-active': showNav  }">
  	          <span></span>
  	          <span></span>
  	          <span></span>
  	        </span>
  	      </div>
- 	      <div id="navbarMenuHeroA" class="navbar-menu">
+ 	      <div id="navbarMenuHeroA" class="navbar-menu" :class="{ 'is-active': showNav }">
  	        <div class="navbar-end">
  	          <%= link_to "Crear Publicación", new_post_path, class:"navbar-item" %>
  	        </div>

@@ -4,23 +4,25 @@
 	<br>
 	<div class="card">
   <header class="card-header">
-    <h2 class="subtitle has-text-centered">
+    <h2 class="title card-header-title">
       <%= link_to post.title, post %>
     </h2>
   </header>
 
   <div class="card-content">  	
-    <div class="content">
-     <%= markdown(post.content.first(250)) + '...' %>
+    <%= markdown(post.content.first(250)) + '...' %>  
+    <div class="content"> 
       <time>
-      	<small><b>Publicó <i><%= post.user.email %></i> hace 
+      	<small>
+        <b>Publicó <i><%= post.user.email %></i> hace 
       	<% time_post = ((Time.now - post.created_at) / 1.hour).round %>
-		<% if time_post < 25 %>
-			<%= "#{time_post} horas" %>
-		<% else %>
-			<%= "#{(time_post / 24 ).round} días" %>
-		<% end %></b>
-		</small>		
+    		  <% if time_post < 25 %>
+    		  	<%= "#{time_post} horas" %>
+    	 	   <% else %>
+    		  	<%= "#{(time_post / 24 ).round} días" %>
+    		  <% end %>
+        </b>
+		    </small>		
       </time>
     </div>
   </div>

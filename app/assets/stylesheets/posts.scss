@@ -18,3 +18,38 @@
   -o-transform:scale(1.06);
   transform:scale(1.05);
 }
+
+.card-header {
+  background-color: hsl(0, 0%, 96%);
+}
+
+.card-header-title {
+  text-align: center;
+}
+
+.card-footer-item {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  justify-content: center;
+  padding: .75rem;
+}
+
+.card-footer-item1:not(:last-child) {
+  border-right: 1px solid #dbdbdb;
+}
+
+.item1 {
+  background-color: hsl(0, 0%, 96%);
+}
+
+.item2 {
+  background-color: hsl(0, 0%, 96%);
+}
+
+.item3 {
+  background-color: hsl(0, 0%, 96%);
+}

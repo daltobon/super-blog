@@ -38,7 +38,7 @@
     <%= link_to 'Editar', edit_post_path(post), class: "card-footer-item item2" %>
     <%= link_to 'Eliminar', post_path(post), method: :delete, data: {confirm: '¿Estás Seguro?' }, class: "card-footer-item item3" %>
     <% else %>
-    <%= link_to 'Leer Más', new_post_path, class: "card-footer-item item1" %>
+    <%= link_to 'Leer Más', post, class: "card-footer-item item1" %>
     <% end %>
   </footer>
 </div>

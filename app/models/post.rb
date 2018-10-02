@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
+  before_action :authenticate_user!, except: [:index, :show]
   before_destroy :remove_file  
   belongs_to :user
+
 
   has_attached_file :image, styles: {large: "1024x768", medium: "720x240", thumb: "240x240" },
    :convert_options => {

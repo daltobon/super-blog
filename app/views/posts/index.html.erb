@@ -4,14 +4,14 @@
 	<br>
 	<div class="card">
   <header class="card-header">
-    <h2 class="card-header-title ">
+    <h2 class="subtitle has-text-centered">
       <%= link_to post.title, post %>
     </h2>
   </header>
 
   <div class="card-content">  	
     <div class="content">
-     <h6><%= markdown(post.content.first(250)) %>...</h6>	
+     <%= markdown(post.content.first(250)) + '...' %>
       <time>
       	<small><b>Publicó <i><%= post.user.email %></i> hace 
       	<% time_post = ((Time.now - post.created_at) / 1.hour).round %>

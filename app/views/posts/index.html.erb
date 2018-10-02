@@ -1,4 +1,6 @@
 <% content_for :page_title, "Publicaciones" %>
+<%= render 'shared/nav' %>
+
 <% @posts.each do |post| %>
 <div class="container">
 	<br>
@@ -10,7 +12,7 @@
   </header>
 
   <div class="card-content">  	
-    <%= markdown(post.content.first(250)) + '...' %>  
+    <%= markdown(post.content.first(250) + '...') %>  
     <div class="content"> 
       <time>
       	<small>

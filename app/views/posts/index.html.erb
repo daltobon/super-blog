@@ -4,14 +4,15 @@
 	<br>
 	<div class="card">
   <header class="card-header">
-    <p class="card-header-title ">
+    <h2 class="card-header-title ">
       <%= link_to post.title, post %>
-    </p>
+    </h2>
   </header>
+
   <div class="card-content">  	
     <div class="content">
-     	<%= markdown(post.content.first(250)) %>...
-      <time datetime="2016-1-1">
+     <h6><%= markdown(post.content.first(250)) %>...</h6>	
+      <time>
       	<small><b>Publicó <i><%= post.user.email %></i> hace 
       	<% time_post = ((Time.now - post.created_at) / 1.hour).round %>
 		<% if time_post < 25 %>
@@ -23,6 +24,7 @@
       </time>
     </div>
   </div>
+
   <footer class="card-footer">
 	<% if signed_in? && post.user == current_user %>
 	<%= link_to 'Nueva Publicación', new_post_path, class: "card-footer-item item1" %>

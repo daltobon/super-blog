@@ -18,7 +18,7 @@
         <figure>
     </div>
     <div class="content">
-     	<%= post.content.first(250) %>...
+     	<%= markdown(post.content.first(250)) %>...
       <time datetime="2016-1-1">
       	<small><b>Publicó <i><%= post.user.email %></i> hace 
       	<% time_post = ((Time.now - post.created_at) / 1.hour).round %>

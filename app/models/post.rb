@@ -18,7 +18,7 @@ class Post < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   validates :title, presence: true
   validates :content, presence: true, length: { minimum: 250 }
- # validates :image, presence: true
+  validates :image, presence: true
 
   def getImage
     @doc = Nokogiri::HTML(self.content)

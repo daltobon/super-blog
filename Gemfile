@@ -19,6 +19,7 @@ gem 'simple_form', '~> 4.0', '>= 4.0.1'
 gem "paperclip", "~> 6.0.0"
 gem 'aws-sdk'
 gem 'redcarpet', '~> 3.4.0'
+gem 'rails-i18n'
 
 group :development, :test do
  

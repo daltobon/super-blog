@@ -12,9 +12,11 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-		if @post.save
-			redirect_to @post, notice: "Post created correctly"
+		if @post.save 
+			flash[:success] = "Publicación creada Exitosamente"
+			redirect_to post_path(@post)
 		else
+			flash[:danger] = "Debes llenar todos los campos"
 			render 'new'
 		end
 	end
@@ -27,14 +29,17 @@ class PostsController < ApplicationController
 
 	def update
 		if @post.update(post_params)
-			redirect_to @post
-		else 
+			flash[:info] = "Tu publicación ha sido actualizada"
+			redirect_to post_path(@post)
+		else
+			flash[:danger] = "Ha ocurrido un error, revisa e intenta de nuevo." 
 			render 'edit'
 		end
 	end	
 
 	def destroy
 		@post.destroy
+		flash[:danger] = "Tu publicación ha sido borrada"
 		redirect_to posts_path
 	end
 

@@ -1,5 +1,4 @@
 class Post < ApplicationRecord
-  before_action :authenticate_user!, except: [:index, :show]
   before_destroy :remove_file  
   belongs_to :user
 

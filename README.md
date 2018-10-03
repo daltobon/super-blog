@@ -1,6 +1,6 @@
 # SUPER BLOG 
 
-Esta aplicación esta desarrollada en Ruby On Rails
+Esta aplicación esta desarrollada en Ruby On Rails las imágenes son cargadas a un S3 BUCKET de **AMAZON**
 
 ***
 
@@ -15,11 +15,14 @@ Esta aplicación esta desarrollada en Ruby On Rails
 - CONTENIDO
 - IMAGEN DE PORTADA 720X240
 - SOPORTA MARKDOWN
+- PAGINACION CON WILL_PAGINATION
+- GEM AWS-SDK-S3 AMAZON SERVER
+- GEM WILL_PAGINATION_BULMA
 
 ***
 
 # DESPLEGADA EN HEROKU
 
-http://arcane-dusk-31198.herokuapp.com/ 
+http://elcana.herokuapp.com/ 
 
 ***

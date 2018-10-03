@@ -23,6 +23,14 @@ class Post < ApplicationRecord
 
   self.per_page = 3
 
+  def previous_post
+    Post.where(["id < ?", id]).last
+  end
+
+  def next_post
+     Post.where(["id > ?", id]).first
+  end
+
   def getImage
     @doc = Nokogiri::HTML(self.content)
     if (!@doc.css('img').blank?)

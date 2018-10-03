@@ -42,3 +42,15 @@
 <br>
 </div>
 <% end %>
+
+<section class="section">
+  <div class="level">
+  <div class="level-item">
+    <div class="level-rigth">
+      <nav class="pagination is-large" role="navigation" aria-label="pagination">
+        <%= will_paginate @posts, renderer: BulmaPagination::Rails, class: "pagination-link"%>
+      </nav>
+    </div>
+  </div>
+</div>
+</section>

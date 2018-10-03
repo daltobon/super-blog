@@ -21,6 +21,8 @@ class Post < ApplicationRecord
   validates :content, presence: true, length: { minimum: 250 }
   validates :image, presence: true
 
+  self.per_page = 3
+
   def getImage
     @doc = Nokogiri::HTML(self.content)
     if (!@doc.css('img').blank?)

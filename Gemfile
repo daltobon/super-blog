@@ -20,6 +20,8 @@ gem "paperclip", "~> 6.0.0"
 gem 'aws-sdk'
 gem 'redcarpet', '~> 3.4.0'
 gem 'rails-i18n'
+gem 'will_paginate'
+gem 'will_paginate-bulma'
 
 group :development, :test do
  

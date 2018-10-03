@@ -1,2 +1,5 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<div>
+  <%  flash.each do |alert, msg| %>
+  <%= content_tag(:div, msg, class: "notification is-#{alert}" ) %>
+  <% end %>
+</div>

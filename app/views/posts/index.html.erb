@@ -5,40 +5,52 @@
 <div class="container">
 	<br>
 	<div class="card">
-  <header class="card-header">
-    <h2 class="title card-header-title">
-      <%= link_to post.title, post %>
-    </h2>
-  </header>
+    <header class="card-header">
+      <h2 class="title card-header-title">
+        <%= link_to post.title, post %>
+      </h2>
+    </header>
 
-  <div class="card-content">  	
-    <%= markdown(post.content.first(250) + '...') %>  
-    <div class="content"> 
-      <time>
-      	<small>
-        <b>Publicó <i><%= post.user.email %></i> hace 
-      	<% time_post = ((Time.now - post.created_at) / 1.hour).round %>
-    		  <% if time_post < 25 %>
-    		  	<%= "#{time_post} horas" %>
-    	 	   <% else %>
-    		  	<%= "#{(time_post / 24 ).round} días" %>
-    		  <% end %>
-        </b>
-		    </small>		
-      </time>
-    </div>
-  </div>
+    <div class="card-content">  	
+      <%= markdown(post.content.first(250) + '...') %>  
+      <div class="content"> 
+        <time>
+         <small>
+          <b>Publicó <i><%= post.user.email %></i> hace 
+           <% time_post = ((Time.now - post.created_at) / 1.hour).round %>
+           <% if time_post < 25 %>
+           <%= "#{time_post} horas" %>
+           <% else %>
+           <%= "#{(time_post / 24 ).round} días" %>
+           <% end %>
+         </b>
+       </small>		
+     </time>
+   </div>
+ </div>
 
-  <footer class="card-footer">
-	<% if signed_in? && post.user == current_user %>
-	<%= link_to 'Nueva Publicación', new_post_path, class: "card-footer-item item1" %>
-    <%= link_to 'Editar', edit_post_path(post), class: "card-footer-item item2" %>
-    <%= link_to 'Eliminar', post_path(post), method: :delete, data: {confirm: '¿Estás Seguro?' }, class: "card-footer-item item3" %>
-    <% else %>
-    <%= link_to 'Leer Más', post, class: "card-footer-item item1" %>
-    <% end %>
-  </footer>
+ <footer class="card-footer">
+   <% if signed_in? && post.user == current_user %>
+   <%= link_to 'Nueva Publicación', new_post_path, class: "card-footer-item item1" %>
+   <%= link_to 'Editar', edit_post_path(post), class: "card-footer-item item2" %>
+   <%= link_to 'Eliminar', post_path(post), method: :delete, data: {confirm: '¿Estás Seguro?' }, class: "card-footer-item item3" %>
+   <% else %>
+   <%= link_to 'Continua leyendo..', post, class: "card-footer-item item1" %>
+   <% end %>
+ </footer>
 </div>
 <br>
 </div>
 <% end %>
+
+<section class="section">
+  <div class="level">
+    <div class="level-item">
+      <div class="level-rigth">
+        <nav class="pagination is-large" role="navigation" aria-label="pagination">
+          <%= will_paginate @posts, :previous_label => 'Anterior', :next_label => 'Siguiente', renderer: BulmaPagination::Rails, class: "navbar"%>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>

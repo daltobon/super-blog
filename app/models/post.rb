@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   before_destroy :remove_file  
   belongs_to :user
 
+
   has_attached_file :image, styles: {large: "1024x768", medium: "720x240", thumb: "240x240" },
    :convert_options => {
     :thumb => "-quality 75 -strip" },
@@ -19,6 +20,16 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true, length: { minimum: 250 }
   validates :image, presence: true
+
+  self.per_page = 3
+
+  def previous_post
+    Post.where(["id < ?", id]).last
+  end
+
+  def next_post
+     Post.where(["id > ?", id]).first
+  end
 
   def getImage
     @doc = Nokogiri::HTML(self.content)

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :update, :edit, :destroy]
 
 	def index
-		@posts = Post.all.order("created_at DESC")	
+		@posts = Post.page(params[:page]).order('created_at DESC')		
 	end
 
 	def new
@@ -12,29 +12,34 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-		if @post.save
-			redirect_to @post, notice: "Post created correctly"
+		if @post.save 
+			flash[:success] = "Publicación creada Exitosamente"
+			redirect_to post_path(@post)
 		else
+			flash[:danger] = "Debes llenar todos los campos"
 			render 'new'
 		end
 	end
 	
 	def show
-	end
+	end		
 
 	def edit
 	end
 
 	def update
 		if @post.update(post_params)
-			redirect_to @post
-		else 
+			flash[:info] = "Tu publicación ha sido actualizada"
+			redirect_to post_path(@post)
+		else
+			flash[:danger] = "Ha ocurrido un error, revisa e intenta de nuevo." 
 			render 'edit'
 		end
 	end	
 
 	def destroy
 		@post.destroy
+		flash[:danger] = "Tu publicación ha sido borrada"
 		redirect_to posts_path
 	end
 

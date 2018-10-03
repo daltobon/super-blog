@@ -1,0 +1,5 @@
+en:
+  errors:
+    messages:
+      blank: "No puede estar en blanco"
+      short: "El campo es no cumple con el tamaño"

@@ -19,6 +19,9 @@ gem 'simple_form', '~> 4.0', '>= 4.0.1'
 gem "paperclip", "~> 6.0.0"
 gem 'aws-sdk'
 gem 'redcarpet', '~> 3.4.0'
+gem 'rails-i18n'
+gem 'will_paginate'
+gem 'will_paginate-bulma'
 
 group :development, :test do
  
@@ -37,6 +40,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
+  gem 'aws-sdk'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard', '~> 2.14', '>= 2.14.2'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false

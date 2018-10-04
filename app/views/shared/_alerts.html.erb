@@ -1,5 +1,6 @@
 <div>
   <%  flash.each do |alert, msg| %>
+  <% next if alert.to_s == 'timedout' %>
   <%= content_tag(:div, msg, class: "notification is-#{alert}" ) %>
   <% end %>
 </div>

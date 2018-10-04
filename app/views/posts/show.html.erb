@@ -1,29 +1,24 @@
 <section>
-	<div class="container is-centered">
+	<div class="is-centered">
 		<figure class="image" id="image">
 			<%= link_to @post do %>
-			<%= image_tag @post.image.url(:medium) %>
+				<%= image_tag @post.image.url(:medium) %>
 			<% end %>
 		<figure>
 	</div>
 </section>
 
 <section class="section">
-			<div class="container">
-				<% if signed_in? && @post.user == current_user %>
-				<nav class="level">
-					<nav class="level-right">
-						<p class="level-item">
-							<%= link_to "Editar", edit_post_path(@post), class: "button is-primary is-outlined" %>
-						</p>
-						<p class="level-item">
-							<%= link_to "Eliminar", post_path(@post), method: :delete, data: {confirm: "Are you sure?" }, class: "button is-danger is-outlined" %>			
-						</p>
-					</nav>
-					<% end %>
-				</nav>	
-				<div class="card">
-					<p class="is-uppercase is-size-2 has-text-centered"><%= @post.title %></p>
+	<div class="container">
+		<div class="card">
+			<p class="is-uppercase is-size-2 has-text-centered"><%= @post.title %>
+				<% if signed_in? && @post.user == current_user %>			
+				<h6 class="has-text-centered">
+					<i class="fas fa-pen-square"></i><%= link_to "Editar", edit_post_path(@post) %>
+					<i class="fas fa-trash-alt"></i><%= link_to "Eliminar", post_path(@post), method: :delete, data: {confirm: "Are you sure?" } %>
+				</h6>			
+				<% end %>
+					</p>
 				</div>	
 				<div class="content box">
 					<%= markdown(@post.content)%>
@@ -31,8 +26,8 @@
 			</div>
 			<div class="container box">
 				<nav class="pagination is-rounded is-medium">
-					<%= link_to("Anterior", @post.previous_post, :class  => "pagination-previous button is-primary is-outlined") if @post.previous_post %>
-					<%= link_to("Siguiente", @post.next_post, :class  => "pagination-next button is-info is-outlined")  if @post.next_post  %>
+					<%= link_to("Anterior", @post.next_post, :class  => "pagination-previous button is-primary is-outlined", remote: true) if @post.next_post %>
+					<%= link_to("Siguiente", @post.previous_post, :class  => "pagination-previous button is-info is-outlined", remote: true)  if @post.previous_post  %>
 				</nav>
 			</div>
 </section>	

@@ -26,8 +26,8 @@
 			</div>
 			<div class="container box">
 				<nav class="pagination is-rounded is-medium">
-					<%= link_to("Anterior", @post.next_post, :class  => "pagination-previous button is-primary is-outlined", remote: true) if @post.next_post %>
-					<%= link_to("Siguiente", @post.previous_post, :class  => "pagination-previous button is-info is-outlined", remote: true)  if @post.previous_post  %>
+				<%= link_to("Anterior", @post.next_post, :class  => "pagination-previous button is-primary is-outlined") if @post.next_post %>
+				<%= link_to("Siguiente", @post.previous_post, :class  => "pagination-next button is-info is-outlined")  if @post.previous_post  %>
 				</nav>
 			</div>
 </section>	

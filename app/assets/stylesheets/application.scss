@@ -15,3 +15,16 @@
  */
 
 @import "bulma";
+
+.footer {
+	background-color: hsl(217, 71%, 53%);
+	color: white;
+}
+
+.footer a {
+	color: hsl(48, 100%, 67%);
+}
+
+.footer strong {
+	color: hsl(48, 100%, 67%);
+}

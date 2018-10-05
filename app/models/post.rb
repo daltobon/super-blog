@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   before_destroy :remove_file  
   belongs_to :user
 
+  has_many :comments, as: :commentable, :dependent => :destroy
+ 
 
   has_attached_file :image, styles: {large: "1024x768", medium: "720x240", thumb: "240x240" },
    :convert_options => {

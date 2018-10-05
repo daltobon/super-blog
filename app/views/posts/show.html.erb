@@ -10,27 +10,58 @@
 
 <section class="section">
 	<div class="container">
-		<div class="card">
+		<div class="">
 			<p class="is-uppercase is-size-2 has-text-centered"><%= @post.title %>
 				<% if signed_in? && @post.user == current_user %>			
 				<h6 class="has-text-centered">
 					<i class="fas fa-pen-square"></i><%= link_to "Editar", edit_post_path(@post) %>
-					<i class="fas fa-trash-alt"></i><%= link_to "Eliminar", post_path(@post), method: :delete, data: {confirm: "Are you sure?" } %>
+					<i class="fas fa-trash-alt"></i><%= link_to "Eliminar", post_path(@post), method: :delete, data: {confirm: "¿Estas Seguro?" } %>
 				</h6>			
 				<% end %>
 					</p>
 				</div>	
-				<div class="content box">
+				<div class="content">
 					<%= markdown(@post.content)%>
 				</div>
 			</div>
-			<div class="container box">
+			<br>
+			<div class="box container">
+				<p><strong><i>Últimos comentarios</i></strong></p>
+				 <% @comments.each do |comment| %>
+				 	<div id="comment" class="">
+				 	<%= markdown(comment.body) %> 
+				 	</div>
+				 <span id="comment-data">
+				 <a href="#">--<%= comment.user.email %></a>	
+				  <b><%= comment.created_at.localtime.to_formatted_s(:short) %></b> 
+				 </span>
+				<% end %>
+			</div>
+
+			<div class="container ">	
+				<% if signed_in? %>		
+					<div class="column">
+						<%= simple_form_for @comment, html: { multipart: true } do |f| %>
+						<div class="field">		
+							<%= f.hidden_field :commentable_type, value: "Post" %>
+							<%= f.hidden_field :commentable_id, value: @post[:id] %>
+							<%= f.hidden_field :user_id, value: current_user[:id]  %>
+						</div>
+						<div class="field">
+							<%= f.input :body, :label=>"Comentario" ,input_html: {class: 'input is-small'}, wrapper: false, label_html: {class: 'label'} %>
+						</div>
+						<div class="field">
+							<%= f.submit "Comentar", class: "button is-success is-small"%>
+						</div>	
+					<% end %>
+					</div>
+					<% end %>
+			</div>
+			<div class="container">
 				<nav class="pagination is-rounded is-medium">
 				<%= link_to("Anterior", @post.next_post, :class  => "pagination-previous button is-primary is-outlined") if @post.next_post %>
 				<%= link_to("Siguiente", @post.previous_post, :class  => "pagination-next button is-info is-outlined")  if @post.previous_post  %>
 				</nav>
 			</div>
-</section>	
-
-
+</section>
 

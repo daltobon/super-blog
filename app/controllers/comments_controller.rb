@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 			redirect_to post_path(comment_params[:commentable_id])
 		end
 	end
-
+	
 	private 
 		def comment_params
 			params.require(:comment).permit(:commentable_type, :commentable_id, :body, :user_id)

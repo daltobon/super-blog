@@ -1,38 +1,38 @@
 		<section>
-			<div class="is-centered">
-			<figure class="image" id="image">
-				<%= link_to @post do %>
-					<%= image_tag @post.image.url(:medium) %>
-				<% end %>
-				<figure>
-			</div>
+			<!-- <div class="is-centered">
+ 			<figure class="image" id="image">
+				<%# link_to @post do %>
+					<%# image_tag @post.image.url(:medium) %>
+				<%# end %>
+			<figure> 
+			</div> -->
 		</section>
 
 		<section class="section">
 			<div class="columns">
-			<div class="column is-1">		
-			</div>
-			<div class="column is-10">
-				<div>
-					<p class="is-uppercase is-size-2 has-text-centered">
-						<div class="tit has-text-centered is-mobile is-desktop">
-							<%= @post.title %>
-						</div> 
-						<% if signed_in? && @post.user == current_user %>			
-						<h6 class="has-text-centered">
-							<i class="fas fa-pen-square"></i><%= link_to "Editar", edit_post_path(@post) %>
-							<i class="fas fa-trash-alt"></i><%= link_to "Eliminar", post_path(@post), method: :delete, data: {confirm: "¿Estas Seguro?" } %>
-						</h6>			
-						<% end %>
-					</p>
-				</div>	
-				<div class="content">
-					<%= markdown(@post.content)%>
+				<div class="column is-1">		
 				</div>
-			</div>
-			<div class="column is-1">		
-			</div>
-			<br>	
+				<div class="column is-10">
+					<div>
+						<p class="is-uppercase is-size-2 has-text-centered">
+							<div class="tit has-text-centered is-mobile is-desktop">
+								<%= @post.title %>
+							</div> 
+							<% if signed_in? && @post.user == current_user %>			
+							<h6 class="has-text-centered">
+								<i class="fas fa-pen-square"></i><%= link_to "Editar", edit_post_path(@post) %>
+								<i class="fas fa-trash-alt"></i><%= link_to "Eliminar", post_path(@post), method: :delete, data: {confirm: "¿Estas Seguro?" } %>
+							</h6>			
+							<% end %>
+						</p>
+					</div>	
+					<div class="content">
+						<%= markdown(@post.content)%>
+					</div>
+				</div>
+				<div class="column is-1">		
+				</div>
+				<br>	
 			</div>			
 
 			<% if @comments.count > 0 %>	

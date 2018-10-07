@@ -1,9 +1,25 @@
 <% content_for :page_title, "Publicaciones" %>
+
 <%= render 'shared/nav' %>
+
+<% if @posts.count <= 0 %>
+
+<section class="section section-empty-container">
+  <div class="section-empty">
+    <div class="container has-text-centered">
+      <h1 class="title">No hay publicaciones para mostrar</h1>
+       <h2 class="subtitle">
+        Sé el primero en  <strong><%= link_to("Crear una nueva Publicación", new_post_path) %></strong>
+      </h2>
+    </div>
+  </div>  
+</section>
+
+<% else %>
 
 <% @posts.each do |post| %>
 <div class="container">
-	<br>
+  <br>
 	<div class="card">
     <header class="card-header">
       <h2 class="title card-header-title">
@@ -54,3 +70,4 @@
     </div>
   </div>
 </section>
+<% end %>

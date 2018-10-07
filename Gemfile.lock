@@ -681,6 +681,8 @@ GEM
     ffi (1.9.25)
     ffi (1.9.25-x64-mingw32)
     formatador (0.2.5)
+    friendly_id (5.2.4)
+      activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     guard (2.14.2)
@@ -860,6 +862,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise
+  friendly_id
   guard (~> 2.14, >= 2.14.2)
   guard-livereload (~> 2.5, >= 2.5.2)
   jbuilder (~> 2.5)
@@ -884,4 +887,4 @@ DEPENDENCIES
   will_paginate-bulma
 
 BUNDLED WITH
-   1.16.5
+   1.16.6

@@ -4,6 +4,8 @@ class Post < ApplicationRecord
 
   has_many :comments, as: :commentable, :dependent => :destroy
  
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 
   has_attached_file :image, styles: {large: "1024x768", medium: "720x240", thumb: "240x240" },
    :convert_options => {
@@ -21,9 +23,15 @@ class Post < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   validates :title, presence: true
   validates :content, presence: true, length: { minimum: 250 }
-  validates :image, presence: true
+  #validates :image, presence: true
 
   self.per_page = 3
+
+   def slug=(value)
+    if value.present?
+      write_attribute(:slug, value)
+    end
+  end
 
   def previous_post
     Post.where(["id < ?", id]).last

@@ -67,3 +67,14 @@
 p {
   font-family: 'Roboto';
 }
+
+.section-empty-container {
+  display: table;
+  height:200px;
+}
+
+.section-empty {
+  hdisplay: table-cell;
+  vertical-align: middle;
+}
+

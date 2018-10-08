@@ -1,47 +1,66 @@
 <% content_for :page_title, "Publicaciones" %>
 <%= render 'shared/nav' %>
 
-<% @posts.each do |post| %>
-<div class="container">
-	<br>
-	<div class="card">
-    <header class="card-header">
-      <h2 class="title card-header-title">
-        <%= link_to post.title, post %>
+<% if @posts.count <= 0 %>
+
+<section class="section section-empty-container">
+  <div class="section-empty">
+    <div class="container has-text-centered">
+      <h1 class="title">No hay publicaciones para mostrar</h1>
+      <h2 class="subtitle">
+        Sé el primero en  <strong><%= link_to("Crear una nueva Publicación", new_post_path) %></strong>
       </h2>
-    </header>
+    </div>
+  </div>  
+</section>
 
-    <div class="card-content">  	
-      <%= markdown(post.content.first(250) + '...') %>  
-      <div class="content"> 
-        <time>
-         <small>
-          <b>Publicó <i><%= post.user.email %></i> hace 
-           <% time_post = ((Time.now - post.created_at) / 1.hour).round %>
-           <% if time_post < 25 %>
-           <%= "#{time_post} horas" %>
-           <% else %>
-           <%= "#{(time_post / 24 ).round} días" %>
-           <% end %>
-         </b>
-       </small>		
-     </time>
+<% else %>
+
+<div class="columns">
+  <div class="column is-1"></div>
+  <div class="column is-10">
+    <% @posts.each do |post| %>
+    <br>
+    <div class="card">
+      <header class="card-header">
+        <h2 class="title card-header-title">
+          <%= link_to post.title, post %>
+        </h2>
+      </header>
+
+      <div class="card-content">    
+        <%= markdown(post.content.first(250) + '...') %>  
+        <div class="content"> 
+          <time>
+           <small>
+            <b>Publicó <i><%= post.user.email %></i> hace 
+             <% time_post = ((Time.now - post.created_at) / 1.hour).round %>
+             <% if time_post < 25 %>
+             <%= "#{time_post} horas" %>
+             <% else %>
+             <%= "#{(time_post / 24 ).round} días" %>
+             <% end %>
+           </b>
+         </small>   
+       </time>
+     </div>
    </div>
- </div>
 
- <footer class="card-footer">
-   <% if signed_in? && post.user == current_user %>
-   <%= link_to 'Nueva Publicación', new_post_path, class: "card-footer-item item1" %>
-   <%= link_to 'Editar', edit_post_path(post), class: "card-footer-item item2" %>
-   <%= link_to 'Eliminar', post_path(post), method: :delete, data: {confirm: '¿Estás Seguro?' }, class: "card-footer-item item3" %>
-   <% else %>
-   <%= link_to 'Continua leyendo..', post, class: "card-footer-item item1" %>
-   <% end %>
- </footer>
+   <footer class="card-footer">
+     <% if signed_in? && post.user == current_user %>
+     <%= link_to 'Nueva Publicación', new_post_path, class: "card-footer-item item1" %>
+     <%= link_to 'Editar', edit_post_path(post), class: "card-footer-item item2" %>
+     <%= link_to 'Eliminar', post_path(post), method: :delete, data: {confirm: '¿Estás Seguro?' }, class: "card-footer-item item3" %>
+     <% else %>
+     <%= link_to 'Continua leyendo..', post, class: "card-footer-item item1" %>
+     <% end %>
+   </footer>
+ </div>
+ <% end %>
 </div>
-<br>
 </div>
-<% end %>
+
+<div class="column is-1"></div> 
 
 <section class="section">
   <div class="level">
@@ -54,3 +73,4 @@
     </div>
   </div>
 </section>
+<% end %>

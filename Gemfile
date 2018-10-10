@@ -23,13 +23,13 @@ gem 'redcarpet', '~> 3.4.0'
 gem 'rails-i18n'
 gem 'will_paginate'
 gem 'will_paginate-bulma'
+gem 'sqlite3-ruby'
 
 group :development, :test do
  
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'sqlite3'
   gem 'aws-sdk'
 end
 

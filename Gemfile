@@ -23,7 +23,7 @@ gem 'redcarpet', '~> 3.4.0'
 gem 'rails-i18n'
 gem 'will_paginate'
 gem 'will_paginate-bulma'
-gem 'sqlite3'
+gem 'sqlite3', '~>1.3.13'
 
 group :development, :test do
  

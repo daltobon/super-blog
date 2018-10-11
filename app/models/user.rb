@@ -8,8 +8,8 @@ class User < ApplicationRecord
   has_many :comments
 
   def confirm!
-  super
-  account_created
-end
+	  super
+	  account_created
+  end
 
 end

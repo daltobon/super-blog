@@ -18,7 +18,7 @@ es:
       last_attempt: "Tiene un intento más antes de que su cuenta sea bloqueada."
     mailer:
       confirmation_instructions:
-        subject: "Instrucciones de confirmación"
+        subject: "Completa tu Registro"
       reset_password_instructions:
         subject: "Instrucciones para restablecer su contraseña"
       unlock_instructions:

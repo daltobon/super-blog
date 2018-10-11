@@ -18,9 +18,9 @@ es:
       last_attempt: "Tiene un intento más antes de que su cuenta sea bloqueada."
     mailer:
       confirmation_instructions:
-        subject: "Instrucciones de confirmación"
+        subject: "Completa tu Registro"
       reset_password_instructions:
-        subject: "Instrucciones para restablecer su contraseña"
+        subject: "Restablece tu contraseña"
       unlock_instructions:
         subject: "Instrucciones de desbloqueo"
     omniauth_callbacks:
@@ -55,5 +55,5 @@ es:
       not_found: "no se ha encontró."
       not_locked: "no estaba bloqueado."
       not_saved:
-        one: "1 error impidió que este usuario sea guardado:"
-        other: "%{count} errores impidieron que este usuario sea guardado:"
+        one: "Error: "
+        other: "Han ocurrido %{count} errores: "

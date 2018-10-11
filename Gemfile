@@ -24,12 +24,13 @@ gem 'rails-i18n'
 gem 'will_paginate'
 gem 'will_paginate-bulma'
 
+
 group :development, :test do
  
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'sqlite3'
+
   gem 'aws-sdk'
 end
 
@@ -42,6 +43,8 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'aws-sdk'
+  gem 'sqlite3', '~>1.3.13'
+  gem 'wdm', '>= 0.1.0'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'guard', '~> 2.14', '>= 2.14.2'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false

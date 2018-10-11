@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-		if @post.save 
+		if @post.save
 			flash[:success] = "Publicación creada Exitosamente"
 			redirect_to post_path(@post)
 		else

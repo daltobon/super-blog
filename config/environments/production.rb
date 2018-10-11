@@ -30,7 +30,7 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
-   config.paperclip_defaults = {
+  config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
     bucket: ENV.fetch('S3_BUCKET_NAME'),
@@ -97,4 +97,22 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.default_url_options = {  :host => "elcana.herokuapp.com" }
+
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "gmail.com",
+    user_name: 'daniel18.tobon@gmail.com',
+    password: 'ALBERTO.58',
+    authentication: "plain",
+    enable_starttls_auto: true
+  }
+
+
 end

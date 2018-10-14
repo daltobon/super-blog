@@ -4,15 +4,13 @@
 
 <% if @posts.count <= 0 %>
 
-<section class="section section-empty-container">
-  <div class="section-empty">
-    <div class="container has-text-centered">
-      <h1 class="title">No hay publicaciones para mostrar</h1>
-      <h2 class="subtitle">
-        Sé el primero en  <strong><%= link_to("Crear una nueva Publicación", new_post_path) %></strong>
+<section class="section start">
+    <div class="transparence">
+      <h1 class="title is-1 has-text-light">No hay publicaciones para mostrar</h1>
+      <h2 class="subtitle has-text-light is-2">     
+        Sé el primero en  <strong><%= link_to "Crear una nueva Publicación", new_post_path, {class: "is-1 has-text-warning"} %></strong>
       </h2>
-    </div>
-  </div>  
+    </div>  
 </section>
 
 <% else %>
